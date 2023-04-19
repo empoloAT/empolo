@@ -1,0 +1,7 @@
+@use '/src/styles/mixin.scss';
+
+.component {
+  @include mixin.maxWidth(1680px);
+  padding: 0 20px;
+  margin: 0 auto;
+}
