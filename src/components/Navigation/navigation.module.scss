@@ -1,7 +1,7 @@
 @use "styles/mixin";
 
 .component {
-  @include mixin.maxWidth(787px);
+  @include mixin.maxWidth(847px);
 }
 
 .list {
@@ -9,4 +9,9 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  font-size: 32px;
+}
+
+.listItem {
+  padding: 0 30px;
 }
