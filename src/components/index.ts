@@ -6,3 +6,7 @@ export * from "./Navigation";
 export * from "./Button";
 export * from "./EmpoloSection";
 export * from "./H1";
+export * from "./H2";
+export * from "./H3";
+export * from "./P";
+export * from "./AboutUsSection";

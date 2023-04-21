@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactNode } from "react";
-import { Container, Header } from "components";
+import { Header } from "components";
 
 import styles from "./layout.module.scss";
 
@@ -10,12 +10,10 @@ type TProps = {
 export const Layout: FunctionComponent<TProps> = ({ children }) => {
   return (
     <div className={styles.component}>
-      <Container>
       <Header />
-        <main className={styles.main}>
-          {children}
-        </main>
-      </Container>
+      <main className={styles.main}>
+        {children}
+      </main>
     </div>
   );
 };

@@ -1,9 +1,8 @@
 :root {
   --ctaYellow: #F4EA70;
-  --bgBlack: #141414;
-  --bgWhite: #E9E9E9;
-  --fontWhite: #FFFFFF;
-  --fontBlack: #000000;
+  --bgBlack: #151515;
+  --white: #FFFFFF;
+  --fontBlack: #1A1B2D;
   --fontGray: #B8B8B8;
 }
 
@@ -17,7 +16,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   padding: 0;
   margin: 0;
-  color: var(--fontWhite);
+  color: var(--white);
   height: 100%;
   background-color: var(--bgBlack);
 }

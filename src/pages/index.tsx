@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import type { GetStaticProps } from "next";
-import { Layout, EmpoloBackground, EmpoloContent } from "components";
+import { Layout, EmpoloBackground, EmpoloContent, AboutUsSection } from "components";
 import { GraphQLClient, gql } from "graphql-request";
 
 export const getStaticProps: GetStaticProps = async() => {
@@ -33,6 +33,7 @@ const Home = (mediaURL: any) => {
     <>
       <EmpoloBackground url={ mediaURL } />
       <EmpoloContent />
+      <AboutUsSection />
     </>
   );
 };

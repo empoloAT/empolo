@@ -16,8 +16,9 @@
 
 .content {
   @include mixin.maxWidth(1247px);
+  margin-bottom: 189px;
 }
 
 .title {
-  margin: 161px 0 80px 0;
+  margin-bottom: 80px;
 }
