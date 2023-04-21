@@ -9,11 +9,13 @@ type TProps = {
 
 export const Layout: FunctionComponent<TProps> = ({ children }) => {
   return (
-    <Container>
+    <div className={styles.component}>
+      <Container>
       <Header />
         <main className={styles.main}>
           {children}
         </main>
-    </Container>
+      </Container>
+    </div>
   );
 };

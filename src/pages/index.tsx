@@ -1,13 +1,39 @@
 import type { ReactElement } from "react";
-import { Layout } from "components";
+import type { GetStaticProps } from "next";
+import { Layout, EmpoloBackground, EmpoloContent } from "components";
+import { GraphQLClient, gql } from "graphql-request";
 
-import styles from "./index.module.scss";
+export const getStaticProps: GetStaticProps = async() => {
+  const wordpressEndpoint = process.env.WORDPRESS_GRAPHQL_API;
 
-const Home = () => {
+  const graphQLClient = new GraphQLClient(wordpressEndpoint);
+
+  const query = gql`
+    {
+      mediaItems {
+        nodes {
+          mediaItemUrl
+        }
+      }
+    }
+  `
+
+  const data = await graphQLClient.request(query);
+  const mediaURL = JSON.parse(JSON.stringify(data?.mediaItems?.nodes[0].mediaItemUrl));
+
+  return {
+    props: {
+      mediaURL
+    }
+  };
+};
+
+const Home = (mediaURL: any) => {
   return (
-    <div className={styles.component}>
-      <h1>Первая страница</h1>
-    </div>
+    <>
+      <EmpoloBackground url={ mediaURL } />
+      <EmpoloContent />
+    </>
   );
 };
 

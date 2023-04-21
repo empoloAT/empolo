@@ -7,6 +7,9 @@
   color: var(--fontBlack);
   font-weight: 600;
   cursor: pointer;
+  z-index: 2;
+  position: relative;
+  line-height: 50%;
 }
 
 .sizeS {
@@ -23,6 +26,9 @@
 
 .sizeL {
   @include mixin.maxWidth(380px);
-	padding: 23px 14px 23px 40px;
+	padding: 14px 14px 14px 40px;
   font-size: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

@@ -14,7 +14,7 @@ export const Button = ({
   size,
   className: propsClassName,
   ...props
-}) => {
+}: Props) => {
   const buttonSize = classNames({
     [styles.sizeS]: size === "s",
     [styles.sizeM]: size === "m",
