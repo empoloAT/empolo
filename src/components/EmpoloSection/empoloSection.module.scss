@@ -1,0 +1,24 @@
+@use "styles/mixin";
+
+.component {
+  position: absolute;
+  width: 100%;
+  height: 1080px;
+  top: 0;
+  left: 0;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  @include mixin.maxWidth(1247px);
+  margin-bottom: 189px;
+}
+
+.title {
+  margin-bottom: 80px;
+}

@@ -1,0 +1,14 @@
+@use "styles/mixin";
+
+.logoContainer {
+  @include mixin.maxWidth(300px);
+  height: 72px;
+  display: flex;
+  align-items: center;
+}
+
+.companyName {
+  @include mixin.maxWidth(234px);
+  height: 22px;
+  margin-left: 16px;
+}

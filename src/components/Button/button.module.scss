@@ -1,0 +1,34 @@
+@use "styles/mixin";
+
+.component {
+  background-color: var(--ctaYellow);
+  border: none;
+  border-radius: 44px;
+  color: var(--fontBlack);
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 2;
+  position: relative;
+  line-height: 50%;
+}
+
+.sizeS {
+	@include mixin.maxWidth(236px);
+  padding: 20.5px 36px;
+  font-size: 26px;
+}
+
+.sizeM {
+  @include mixin.maxWidth(290px);
+	padding: 20.5px 53.5px;
+  font-size: 26px;
+}
+
+.sizeL {
+  @include mixin.maxWidth(380px);
+	padding: 14px 14px 14px 40px;
+  font-size: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
