@@ -7,34 +7,26 @@ export const Navigation: FunctionComponent = () => {
   return (
     <nav className={styles.component}>
       <ul className={styles.list}>
-        <Link href="/">
-          <li className={styles.listItem}>
-            <a href="">
-              About Us
-            </a>
-          </li>
-        </Link>
-        <Link href="/">
-          <li className={styles.listItem}>
-            <a href="">
-              Services
-            </a>
-          </li>
-        </Link>
-        <Link href="/">
-          <li className={styles.listItem}>
-            <a href="">
-              Projects
-            </a>
-          </li>
-        </Link>
-        <Link href="/">
-          <li className={styles.listItem}>
-            <a href="">
-              Team
-            </a>
-          </li>
-        </Link>
+        <li className={styles.listItem}>
+          <Link href="/">
+            About Us
+          </Link>
+        </li>
+        <li className={styles.listItem}>
+          <Link href="/">
+            Services
+          </Link>
+        </li>
+        <li className={styles.listItem}>
+          <Link href="/">
+            Projects
+          </Link>
+        </li>
+        <li className={styles.listItem}>
+          <Link href="/">
+            Team
+          </Link>
+        </li>
       </ul>
     </nav>
   )

@@ -1,39 +1,22 @@
 import type { ReactElement } from "react";
-import type { GetStaticProps } from "next";
+import { useQuery } from "@apollo/client";
+import { GET_ALL_MEDIA } from "../data/media";
 import { Layout, EmpoloBackground, EmpoloContent, AboutUsSection } from "components";
-import { GraphQLClient, gql } from "graphql-request";
 
-export const getStaticProps: GetStaticProps = async() => {
-  const wordpressEndpoint = process.env.WORDPRESS_GRAPHQL_API;
+const Home = () => {
+  const { data } = useQuery(GET_ALL_MEDIA);
+  const videoUrl = data?.mediaItems.nodes[0].mediaItemUrl;
+  const firstImageUrl = data?.mediaItems.nodes[1].mediaItemUrl;
+  const secondImageUrl = data?.mediaItems.nodes[2].mediaItemUrl;
 
-  const graphQLClient = new GraphQLClient(wordpressEndpoint);
-
-  const query = gql`
-    {
-      mediaItems {
-        nodes {
-          mediaItemUrl
-        }
-      }
-    }
-  `
-
-  const data = await graphQLClient.request(query);
-  const mediaURL = JSON.parse(JSON.stringify(data?.mediaItems?.nodes[0].mediaItemUrl));
-
-  return {
-    props: {
-      mediaURL
-    }
-  };
-};
-
-const Home = (mediaURL: any) => {
   return (
     <>
-      <EmpoloBackground url={ mediaURL } />
+      <EmpoloBackground url={videoUrl} />
       <EmpoloContent />
-      <AboutUsSection />
+      <AboutUsSection 
+        firstUrl={firstImageUrl}
+        secondUrl={secondImageUrl}
+      />
     </>
   );
 };

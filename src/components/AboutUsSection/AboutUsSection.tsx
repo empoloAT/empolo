@@ -1,11 +1,9 @@
 import Image from "next/image";
 import { Container, H2, H3, P } from "components";
 
-import firstImage from "./img/firstImage.jpg";
-import secondImage from "./img/secondImage.jpg";
 import styles from "./aboutUsSection.module.scss";
 
-export const AboutUsSection = () => {
+export const AboutUsSection = ({firstUrl, secondUrl}: any) => {
   return (
     <section className={styles.component}>
       <Container>
@@ -17,14 +15,14 @@ export const AboutUsSection = () => {
           </div>
           <Image
             className={styles.image}
-            src={firstImage}
+            src={firstUrl}
             alt="Image"
             width={668}
             height={440}
           />
           <Image
             className={styles.image}
-            src={secondImage}
+            src={secondUrl}
             alt="Image"
             width={668}
             height={440}
