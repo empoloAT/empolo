@@ -29,8 +29,6 @@
 }
 
 .image {
-  @include mixin.maxWidth(668px);
-  max-height: 440px;
   object-fit: cover;
   border-radius: 44px;
 }

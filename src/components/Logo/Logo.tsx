@@ -7,7 +7,12 @@ import companySrc from "./Company.svg";
 export const Logo = () => {
   return (
     <div className={styles.logoContainer}>
-      <Image className={styles.image} src={logoSrc} alt="Logo" />
+      <Image 
+        src={logoSrc}
+        alt="Logo"
+        width={50}
+        height={50}
+      />
       <Image className={styles.companyName} src={companySrc} alt="Company" />
     </div>
   );
