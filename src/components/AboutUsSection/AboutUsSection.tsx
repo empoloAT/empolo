@@ -11,7 +11,7 @@ export const AboutUsSection = ({firstUrl, secondUrl}: any) => {
         <div className={styles.gridContainer}>
           <div className={styles.firstBlock}>
             <H3 className={styles.text}>EMPOLO is a digital agency consisting of a group of experienced consultants, developers, creative directors, and content creators.</H3>
-            <P className={styles.text}>Our experience in the digital world and our understanding of our clients' needs enable us to develop individual and tailored solutions. We are committed to providing our clients with first-class service and helping them achieve their goals.</P>
+            <P className={styles.text}>Our experience in the digital world and our understanding of our clients{"\u0027"} needs enable us to develop individual and tailored solutions. We are committed to providing our clients with first-class service and helping them achieve their goals.</P>
           </div>
           <Image
             className={styles.image}
@@ -29,7 +29,7 @@ export const AboutUsSection = ({firstUrl, secondUrl}: any) => {
           />
           <H3 className={styles.text}>We are committed to providing our clients with first-class service.</H3>
           <H3 className={styles.text}>EMPOLO is a digital agency consisting of a group of experienced consultants, developers, creative directors, and content creators.</H3>
-          <P className={styles.text}>Our experience in the digital world and our understanding of our clients' needs enable us to develop individual and tailored solutions. We are committed to providing our clients with first-class service and helping them achieve their goals. </P>
+          <P className={styles.text}>Our experience in the digital world and our understanding of our clients{"\u0027"} needs enable us to develop individual and tailored solutions. We are committed to providing our clients with first-class service and helping them achieve their goals. </P>
         </div>
       </Container>
     </section>
