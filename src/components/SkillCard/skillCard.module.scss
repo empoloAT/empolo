@@ -1,0 +1,31 @@
+@use "styles/mixin";
+
+.component {
+  @include mixin.maxWidth(831px);
+  height: 298px;
+  background-color: var(--bgBlack);
+  color: var(--white);
+  padding: 48px;
+  border-radius: 44px;
+  display: grid;
+  grid-template-columns: 10.5% 80%;
+}
+
+.number{
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.subtitle {
+  font-size: 20px;
+  grid-column-start: 2;
+  display: flex;
+  align-items: center;
+}

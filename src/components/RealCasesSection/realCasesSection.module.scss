@@ -1,0 +1,17 @@
+.component {
+  background-color: var(--bgGray);
+  padding: 100px 0;
+}
+
+.container {
+  padding-top: 80px;
+  display: flex;
+  gap: 16px;
+  height: fit-content;
+}
+
+.imagesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

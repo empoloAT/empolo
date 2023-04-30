@@ -1,12 +1,17 @@
+import { FunctionComponent } from "react";
 import { LogoButton, H1, Container } from "components";
 
 import styles from "./empoloSection.module.scss";
 
-export const EmpoloContent = () => {
+type TProps = {
+  title: string,
+};
+
+export const EmpoloContent: FunctionComponent<TProps> = ({ title }) => {
   return (
     <Container>
       <div className={styles.content}>
-        <H1 className={styles.title}>Empolo ist ein Kollektiv aus Experten aus allen digitalen Bereichen, die Unternehmen bei Ihrem Wachstum unterstützen.</H1>
+        <H1 className={styles.title}>{title}</H1>
         <LogoButton>Let{"\u2019"}s Talk</LogoButton>
       </div>
     </Container>

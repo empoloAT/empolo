@@ -1,0 +1,19 @@
+@use "styles/mixin";
+
+.component {
+  @include mixin.maxWidth(408px);
+  height: 500px;
+  background-color: var(--ctaYellow);
+  border-radius: 44px;
+  padding: 50px 40px 40px 40px;
+  color: var(--fontBlack);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  @include mixin.maxWidth(237px);
+  font-weight: 600;
+  margin: 12px 0;
+}

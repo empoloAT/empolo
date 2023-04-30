@@ -1,21 +1,47 @@
 import type { ReactElement } from "react";
-import { useQuery } from "@apollo/client";
-import { GET_ALL_MEDIA } from "../data/media";
-import { Layout, EmpoloBackground, EmpoloContent, AboutUsSection } from "components";
+import { GetAllMedia } from "utils/media";
+import { GetMainTitle } from "utils/mainTitle";
+import { GetAllPosts } from "utils/posts";
+import {
+  Layout,
+  EmpoloBackground,
+  EmpoloContent,
+  AboutUsSection,
+  ForCoreBusinessSection,
+  SkillCardsSection,
+  RealCasesSection,
+  CooperationSection,
+  FooterSection
+} from "components";
 
 const Home = () => {
-  const { data } = useQuery(GET_ALL_MEDIA);
-  const videoUrl = data?.mediaItems.nodes[0].mediaItemUrl;
-  const firstImageUrl = data?.mediaItems.nodes[1].mediaItemUrl;
-  const secondImageUrl = data?.mediaItems.nodes[2].mediaItemUrl;
+  const mediaUrls = GetAllMedia();
+  const mainTitle = GetMainTitle();
+  const posts = GetAllPosts();
 
   return (
     <>
-      <EmpoloBackground url={videoUrl} />
-      <EmpoloContent />
+      <EmpoloBackground
+        url={mediaUrls.videoUrl}
+      />
+      <EmpoloContent
+        title={mainTitle}
+      />
       <AboutUsSection 
-        firstUrl={firstImageUrl}
-        secondUrl={secondImageUrl}
+        firstUrl={mediaUrls.firstImageUrl}
+        secondUrl={mediaUrls.secondImageUrl}
+        posts={posts}
+      />
+      <ForCoreBusinessSection posts={posts} />
+      <SkillCardsSection posts={posts} />
+      <RealCasesSection
+        posts={posts}
+        urls={mediaUrls}
+      />
+      <CooperationSection posts={posts} />
+      <FooterSection 
+        posts={posts}
+        urls={mediaUrls}
       />
     </>
   );

@@ -1,0 +1,22 @@
+@use "styles/mixin";
+
+.component {
+  padding: 100px 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.image {
+  object-fit: cover;
+  border-radius: 32px;
+  cursor: pointer;
+  filter: grayscale(1);
+}
+
+.titleWrapper {
+  @include mixin.maxWidth(671px);
+}
+
+.subtitle {
+  margin: 80px 0 64px 0;
+}

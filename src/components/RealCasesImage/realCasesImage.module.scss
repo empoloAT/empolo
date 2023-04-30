@@ -1,0 +1,35 @@
+.imageWrapper {
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
+  border-radius: 32px;
+  cursor: pointer;
+}
+
+.imageHovered {
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  width: 100%;
+  height: 203px;
+  border-radius: 32px;
+  transition: .6s;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 58px 32px;
+  cursor: pointer;
+}
+
+.imageNotHovered {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  padding: 58px 32px;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: var(--fontGray);
+  margin-top: 8px;
+}

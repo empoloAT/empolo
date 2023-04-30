@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { FunctionComponent } from "react"
 
 import styles from "./navigation.module.scss";
 
-export const Navigation: FunctionComponent = () => {
+export const Navigation = () => {
   return (
     <nav className={styles.component}>
       <ul className={styles.list}>
@@ -29,5 +28,5 @@ export const Navigation: FunctionComponent = () => {
         </li>
       </ul>
     </nav>
-  )
+  );
 };

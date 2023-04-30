@@ -1,17 +1,34 @@
 import Image from "next/image";
+import { FunctionComponent } from "react";
 import { Container, H2, H3, P } from "components";
 
 import styles from "./aboutUsSection.module.scss";
 
-export const AboutUsSection = ({firstUrl, secondUrl}: any) => {
+type TProps = {
+  firstUrl: string,
+  secondUrl: string,
+  posts: {
+    firstTitle: string,
+    secondTitle: string,
+    thirdTitle: string,
+    fourthTitle: string,
+    fifthTitle: string,
+  }
+};
+
+export const AboutUsSection: FunctionComponent<TProps> = ({
+  firstUrl,
+  secondUrl,
+  posts
+}) => {
   return (
     <section className={styles.component}>
       <Container>
         <H2 className={styles.mainTitle}>About Us</H2>
         <div className={styles.gridContainer}>
           <div className={styles.firstBlock}>
-            <H3 className={styles.text}>EMPOLO is a digital agency consisting of a group of experienced consultants, developers, creative directors, and content creators.</H3>
-            <P className={styles.text}>Our experience in the digital world and our understanding of our clients{"\u0027"} needs enable us to develop individual and tailored solutions. We are committed to providing our clients with first-class service and helping them achieve their goals.</P>
+            <H3 className={styles.text}>{posts.firstTitle}</H3>
+            <P className={styles.text}>{posts.secondTitle}</P>
           </div>
           <Image
             className={styles.image}
@@ -27,9 +44,9 @@ export const AboutUsSection = ({firstUrl, secondUrl}: any) => {
             width={668}
             height={440}
           />
-          <H3 className={styles.text}>We are committed to providing our clients with first-class service.</H3>
-          <H3 className={styles.text}>EMPOLO is a digital agency consisting of a group of experienced consultants, developers, creative directors, and content creators.</H3>
-          <P className={styles.text}>Our experience in the digital world and our understanding of our clients{"\u0027"} needs enable us to develop individual and tailored solutions. We are committed to providing our clients with first-class service and helping them achieve their goals. </P>
+          <H3 className={styles.text}>{posts.thirdTitle}</H3>
+          <H3 className={styles.text}>{posts.fourthTitle}</H3>
+          <P className={styles.text}>{posts.fifthTitle}</P>
         </div>
       </Container>
     </section>
