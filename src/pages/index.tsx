@@ -43,6 +43,7 @@ const Home = () => {
         posts={posts}
         urls={mediaUrls}
       />
+      <ForCoreBusinessSection posts={posts} />
     </>
   );
 };
