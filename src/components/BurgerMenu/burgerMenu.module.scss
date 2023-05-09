@@ -1,0 +1,38 @@
+@use "styles/mixin";
+@use "styles/breakpoints";
+
+.component {
+  position: absolute;
+  transform: translateX(-100vw);
+  height: 100vh;
+  padding: 65px 68px 0 60px;
+
+  @include mixin.media-w(breakpoints.$mobile) {
+    padding: 18px 26px 0 20px;
+  }
+}
+
+.activeComponent {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.3s ease-in-out;
+  width: 341px;
+  height: 100vh;
+  background-color: var(--ctaYellow);
+  color: var(--fontBlack);
+  padding: 65px 68px 0 60px;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+
+  @include mixin.media-w(breakpoints.$mobile) {
+    width: 100%;
+    padding: 18px 26px 0 20px;
+  }
+}
+
+.navigation {
+  height: 100%;
+  width: 70% !important;
+}

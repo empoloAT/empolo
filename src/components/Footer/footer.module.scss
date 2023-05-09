@@ -1,0 +1,96 @@
+@use "styles/mixin";
+@use "styles/breakpoints";
+
+.component {
+  background-color: var(--bgGray);
+  padding-bottom: 2.7%;
+}
+
+.navigation {
+  border-top: 1px solid var(--borderGray);
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2.5%;
+  height: 100px;
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    height: inherit;
+    align-items: flex-start;
+    padding: 20px 0 60px 0;
+  }
+}
+
+.list {
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    width: fit-content;
+  }
+}
+
+.socialContainer {
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    width: 36.6%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px
+  }
+}
+
+.registerContainer {
+  @include mixin.maxWidth(318px);
+  height: 114px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 16px 0;
+
+  @include mixin.media-w(breakpoints.$laptop) {
+    margin-bottom: 72px;
+  }
+
+  @include mixin.media-w(breakpoints.$mobile) {
+    @include mixin.maxWidth(390px);
+  }
+}
+
+.title {
+  font-size: 16px;
+}
+
+.text {
+  font-size: 12px;
+}
+
+.form {
+  position: relative;
+}
+
+.button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 70px;
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    flex-direction: column;
+    gap: 60px;
+    margin-bottom: 40px;
+    align-items: center;
+  }
+}
+
+.terms {
+  width: 22.6%;
+  display: flex;
+  justify-content: space-between;
+  min-width: 274px;
+  
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    width: 100%;
+    order: -1;
+  }
+}

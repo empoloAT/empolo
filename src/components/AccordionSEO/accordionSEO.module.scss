@@ -1,0 +1,112 @@
+@use "styles/mixin";
+@use "styles/breakpoints";
+
+.component {
+  background-color: var(--bgGray);
+}
+
+.wrapper {
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    padding: 0;
+  }
+}
+
+.contentWrapper {
+  padding: 6.8% 0 4.9% 0;
+}
+
+.mainTitle {
+  margin-bottom: 4.9%;
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    padding-left: 40px;
+  }
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    padding-left: 20px;
+  }
+}
+
+.contentContainer {
+  background-color: var(--white);
+  color: var(--fontBlack);
+  border-radius: 32px;
+  padding: 0 42px;
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    border-radius: 0;
+  }
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    padding: 0 20px 20px 20px;
+  }
+}
+
+.accordionTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  height: 114px;
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    height: 66px;
+  }
+}
+
+.titleLogo {
+  display: flex;
+  align-items: center;
+}
+
+.logoArrow {
+  width: fit-content;
+  height: 23px;
+  padding-right: 22px;
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    height: 12px;
+  }
+}
+
+.title {
+  font-size: 46px;
+  font-weight: 600;
+
+  @include mixin.media-w(breakpoints.$laptop) {
+    @include mixin.fluidFont(22, 46, 1024);
+  }
+}
+
+.accordionContent {
+  margin: -20px 0 0 64px;
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    margin: 0 0 0 44px;
+  }
+}
+
+.accordionContent:last-child {
+  padding-bottom: 32px;
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    padding-bottom: 0px;
+  }
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 400;
+
+  @include mixin.media-w(breakpoints.$laptop) {
+    @include mixin.fluidFont(14, 20, 1024);
+  }
+}
+
+.logo {
+  width: 26px;
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    width: 14px;
+  }
+}

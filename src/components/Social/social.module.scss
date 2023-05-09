@@ -1,0 +1,27 @@
+@use "styles/mixin";
+@use "styles/breakpoints";
+
+.component {
+  width: 11.9%;
+  min-width: 163px;
+  height: 73.1px;
+
+  @include mixin.media-w(breakpoints.$laptop) {
+    min-width: 128px;
+  }
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    height: 16px;
+  }
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.listItem {
+  position: relative;
+  width: 13.3%;
+}

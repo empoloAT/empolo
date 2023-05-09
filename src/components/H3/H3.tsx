@@ -1,13 +1,13 @@
 import classNames from "classnames"
-import { FunctionComponent, ReactNode } from "react";
+import { FunctionComponent } from "react";
 
 import styles from "./h3.module.scss";
 
 type TProps = {
-  children: ReactNode;
+  children: string;
   isText?: boolean;
   className?: string;
-}
+};
 
 export const H3: FunctionComponent<TProps> = ({
   children,
@@ -22,7 +22,9 @@ export const H3: FunctionComponent<TProps> = ({
     {children}
   </span>
   :
-  <h3 className={componentClassName} {...props}>
-    {children}
-  </h3>;
+  <h3
+    className={componentClassName}
+    {...props}
+    dangerouslySetInnerHTML={{__html: children || ""}}
+  />
 };

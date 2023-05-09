@@ -11,7 +11,9 @@ import {
   SkillCardsSection,
   RealCasesSection,
   CooperationSection,
-  FooterSection
+  OurTeam,
+  AccordionSEO,
+  ContactUS
 } from "components";
 
 const Home = () => {
@@ -39,11 +41,12 @@ const Home = () => {
         urls={mediaUrls}
       />
       <CooperationSection posts={posts} />
-      <FooterSection 
+      <OurTeam 
         posts={posts}
         urls={mediaUrls}
       />
-      <ForCoreBusinessSection posts={posts} />
+      <AccordionSEO />
+      <ContactUS />
     </>
   );
 };

@@ -1,9 +1,19 @@
 @use "styles/mixin";
+@use "styles/breakpoints";
 
 .component {
-  padding: 100px 120px;
+  background-color: var(--bgGray);
+}
+
+.contentWrapper {
   display: flex;
+  padding: 6.8% 0 4.9% 0;
   justify-content: space-between;
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    flex-direction: column;
+    padding: 40px 0;
+  }
 }
 
 .image {
@@ -15,8 +25,34 @@
 
 .titleWrapper {
   @include mixin.maxWidth(671px);
+  width: 39.7%;
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    width: 100%;
+  }
+}
+
+.imagesWrapper {
+  position: relative;
+  width: 34.6%;
+  padding-top: calc(730 / 608 * 34.6%);
+  height: 0;
+  overflow: hidden;
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    margin-bottom: 28px;
+    width: 64%;
+    padding-top: calc(730 / 608 * 64%);
+  }
 }
 
 .subtitle {
-  margin: 80px 0 64px 0;
+  margin: 13.2% 0 9.4% 0;
+  color: var(--fontGray);
+  @include mixin.fluidFont(22, 26, 1920);
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    margin: 20px 0;
+    @include mixin.fluidFont(20, 24, 1920);
+  }
 }

@@ -1,7 +1,8 @@
 @use "styles/mixin";
+@use "styles/breakpoints";
 
 .component {
-  @include mixin.maxWidth(847px);
+  width: 46%;
 }
 
 .list {
@@ -9,9 +10,31 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  font-size: 32px;
+  @include mixin.fluidFont(8, 32, 1920);
+  white-space: nowrap;
 }
 
-.listItem {
-  padding: 0 30px;
+.activeBurger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 32px;
+  font-weight: 500;
+  align-items: flex-start;
+  height: 39.5%;
+  white-space: nowrap;
+}
+
+.columnDirection {
+  @include mixin.media-w(breakpoints.$laptop) {
+    @include mixin.fluidFont(14, 16, 1024);
+  }
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    padding-top: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+  }
 }

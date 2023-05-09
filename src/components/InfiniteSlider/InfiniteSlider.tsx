@@ -9,20 +9,20 @@ export const InfiniteSlider = () => {
   return (
     <div className={styles.component}>
       <div className={styles.sliderTrack}>
-        <Image src={DiePostSrc} alt="Logo" />
-        <Image src={OracleSrc} alt="Logo" />
-        <Image src={ParamountSrc} alt="Logo" />
-        <Image src={DiePostSrc} alt="Logo" />
-        <Image src={OracleSrc} alt="Logo" />
-        <Image src={ParamountSrc} alt="Logo" />
+        <Image className={styles.image} src={DiePostSrc} alt="Logo" />
+        <Image className={styles.image} src={OracleSrc} alt="Logo" />
+        <Image className={styles.image} src={ParamountSrc} alt="Logo" />
+        <Image className={styles.image} src={DiePostSrc} alt="Logo" />
+        <Image className={styles.image} src={OracleSrc} alt="Logo" />
+        <Image className={styles.image} src={ParamountSrc} alt="Logo" />
       </div>
       <div className={styles.sliderTrack}>
-        <Image src={DiePostSrc} alt="Logo" />
-        <Image src={OracleSrc} alt="Logo" />
-        <Image src={ParamountSrc} alt="Logo" />
-        <Image src={DiePostSrc} alt="Logo" />
-        <Image src={OracleSrc} alt="Logo" />
-        <Image src={ParamountSrc} alt="Logo" />
+        <Image className={styles.image} src={DiePostSrc} alt="Logo" />
+        <Image className={styles.image} src={OracleSrc} alt="Logo" />
+        <Image className={styles.image} src={ParamountSrc} alt="Logo" />
+        <Image className={styles.image} src={DiePostSrc} alt="Logo" />
+        <Image className={styles.image} src={OracleSrc} alt="Logo" />
+        <Image className={styles.image} src={ParamountSrc} alt="Logo" />
       </div>
     </div>
   );

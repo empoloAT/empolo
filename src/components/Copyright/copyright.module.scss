@@ -1,0 +1,15 @@
+@use "styles/mixin";
+@use "styles/breakpoints";
+
+.component {
+  color: var(--fontGray);
+}
+
+.title {
+  @include mixin.fluidFont(10, 20, 1920);
+  white-space: nowrap;
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    font-size: 14px;
+  }
+}

@@ -1,17 +1,59 @@
+@use "styles/mixin";
+@use "styles/breakpoints";
+
 .component {
   background-color: var(--bgGray);
-  padding: 100px 0;
+  padding: 5.2% 0;
 }
 
 .container {
-  padding-top: 80px;
-  display: flex;
-  gap: 16px;
-  height: fit-content;
+  padding-top: 5.2%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, auto);
+  grid-gap: 16px 16px;
+
+  @include mixin.media-w(breakpoints.$laptop) {
+    grid-gap: 8px 8px;
+  }
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    padding-top: 20px;
+  }
 }
 
-.imagesContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.firstImage {
+  grid-row: span 3;
+  grid-column: 1;
+  padding-top: calc(546 / 832 * 100%);
+}
+
+.secondImage {
+  grid-row: span 4;
+  grid-column: 2;
+  padding-top: calc(753 / 832 * 100%);
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    grid-column: 1;
+    padding-top: calc(546 / 832 * 100%);
+  }
+}
+
+.thirdImage {
+  grid-row: span 3;
+  grid-column: 1;
+  padding-top: calc(546 / 832 * 100%);
+}
+
+.fourthImage {
+  grid-row: span 2;
+  grid-column: 2;
+  padding-top: calc(339 / 832 * 100%);
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    grid-column: 1;
+    padding-top: calc(546 / 832 * 100%);
+  }
 }

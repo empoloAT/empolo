@@ -1,19 +1,27 @@
+import classNames from "classnames";
 import Image from "next/image";
 
 import styles from "./logo.module.scss";
 import logoSrc from "./Logo.svg";
-import companySrc from "./Company.svg";
 
-export const Logo = () => {
+type Props = {
+  size?: "s";
+};
+
+export const Logo = ({size}: Props) => {
+  const logoSize = classNames({ [styles.sizeS]: size === "s" });
+  const logoClassName = classNames(
+    styles.component,
+    logoSize
+  );
+
   return (
-    <div className={styles.logoContainer}>
-      <Image 
+    <div className={logoClassName}>
+      <Image
         src={logoSrc}
         alt="Logo"
-        width={50}
-        height={50}
+        fill
       />
-      <Image className={styles.companyName} src={companySrc} alt="Company" />
     </div>
   );
 };

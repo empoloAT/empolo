@@ -1,0 +1,61 @@
+.component {
+  width: 100%;
+  height: 48px;
+  font-family: Golos UI, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.opened {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--fontBlack);
+  font-size: 20px;
+  color: var(--fontBlack);
+  font-weight: 500;
+
+  &::placeholder {
+    color: var(--fontBlack);
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 24px;
+  }
+}
+
+.closed {
+  background-color: var(--white);
+  border: 1px solid var(--ctaYellow);
+  font-size: 16px;
+  color: var(--fontBlack);
+  font-weight: 400;
+  border-radius: 32px;
+  padding: 12px 14.5px;
+
+  &::placeholder {
+    color: var(--fontGray);
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 24px;
+  }
+}
+
+.container {
+	position: relative;
+}
+
+.placeholderActive {
+  color: var(--fontBlack);
+	position: absolute;
+  bottom: 92%;
+  left: 3px;
+	font-size: 16px;
+  background-color: var(--ctaYellow);
+}
+
+.opened:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0 50px var(--ctaYellow);
+  -webkit-text-fill-color: var(--fontBlack);
+}
+
+.closed:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0 50px var(--white);
+  -webkit-text-fill-color: var(--fontBlack);
+}

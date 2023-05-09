@@ -1,0 +1,74 @@
+@use "styles/mixin";
+@use "styles/breakpoints";
+
+.component {
+  background-color: var(--bgGray);
+  padding: 6.8% 0 12.5% 0;
+}
+
+.wrapper {
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    padding: 0;
+  }
+}
+
+.contentWrapper {
+  background-color: var(--ctaYellow);
+  color: var(--fontBlack);
+  border-radius: 32px;
+  padding: 5.5%;
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    border-radius: 0;
+  }
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    padding: 40px 20px;
+  }
+}
+
+.mainTitle {
+  @include mixin.fluidFont(20, 104, 1920);
+
+  @include mixin.media-w(breakpoints.$laptop) {
+    @include mixin.fluidFont(30, 56, 1024);
+  }
+}
+
+.mainContainer {
+  display: flex;
+  margin-top: 4.5%;
+  gap: 13%;
+}
+
+.contentContainer {
+  width: fit-content;
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    width: 100%;
+  }
+}
+
+.input {
+  margin-bottom: 12.4%
+}
+
+.subtitle {
+  @include mixin.fluidFont(18, 32, 1920);
+  font-weight: 600;
+  margin-bottom: 12.4%;
+
+  @include mixin.media-w(breakpoints.$laptop) {
+    @include mixin.fluidFont(20, 24, 1024);
+  }
+}
+
+.button {
+  background-color: var(--bgBlack);
+  color: var(--ctaYellow);
+  margin-top: 12.4%;
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    margin-top: 28px;
+  }
+}

@@ -1,14 +1,16 @@
 @use "styles/mixin";
+@use "styles/breakpoints";
 
-.logoContainer {
-  @include mixin.maxWidth(300px);
-  height: 72px;
-  display: flex;
-  align-items: center;
+.component {
+  width: 17%;
+  position: relative;
+  min-width: 165px;
+  min-height: 27.4px;
 }
 
-.companyName {
-  @include mixin.maxWidth(234px);
-  height: 22px;
-  margin-left: 16px;
+.sizeS {
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    min-width: 95.8px;
+    min-height: 21.7px;
+  }
 }

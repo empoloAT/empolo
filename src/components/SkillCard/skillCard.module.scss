@@ -1,31 +1,64 @@
 @use "styles/mixin";
+@use "styles/breakpoints";
 
 .component {
   @include mixin.maxWidth(831px);
-  height: 298px;
+  min-height: 298px;
   background-color: var(--bgBlack);
   color: var(--white);
   padding: 48px;
   border-radius: 44px;
   display: grid;
-  grid-template-columns: 10.5% 80%;
+  grid-template-columns: 37px auto;
+  grid-row-gap: 40px;
+  grid-column-gap: 40px;
+
+  @include mixin.media-w(breakpoints.$skillCards) {
+    padding: 48px 60px;
+    @include mixin.maxWidth(1350px);
+  }
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    padding: 20px 34px 58px 34px;
+    border-radius: 0;
+    grid-row-gap: 34px;
+    grid-column-gap: 20px;
+    min-height: auto;
+  }
 }
 
 .number{
   display: flex;
   align-items: center;
+  font-size: 26px;
+
+  @include mixin.media-w(breakpoints.$laptop) {
+    @include mixin.fluidFont(16, 26, 1024);
+  }
 }
 
 .title {
-  font-size: 32px;
   font-weight: 600;
   display: flex;
   align-items: center;
+  font-size: 32px;
+
+  @include mixin.media-w(breakpoints.$laptop) {
+    @include mixin.fluidFont(24, 32, 1024);
+  }
 }
 
 .subtitle {
-  font-size: 20px;
   grid-column-start: 2;
   display: flex;
   align-items: center;
+  font-size: 20px;
+
+  @include mixin.media-w(breakpoints.$laptop) {
+    @include mixin.fluidFont(14, 20, 1024);
+  }
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    grid-column: 1 / 3;
+  }
 }

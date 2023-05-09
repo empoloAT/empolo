@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { ReactNode } from "react";
 import { Button } from "components"
-import logoSrc from "./ButtonArrow.svg";
+import logoSrc from "./img/ButtonArrow.svg";
+
+import styles from "./button.module.scss";
 
 type Props = {
   children: ReactNode;
@@ -13,7 +15,11 @@ export const LogoButton = ({ children }: Props) => {
       size="l"
     >
       {children}
-      <Image src={logoSrc} alt="Arrow" />
+      <Image
+        className={styles.logoButton}
+        src={logoSrc} 
+        alt="Arrow"
+      />
     </Button>
   )
 }

@@ -1,9 +1,10 @@
 @use "styles/mixin";
+@use "styles/breakpoints";
 
 .component {
   position: absolute;
   width: 100%;
-  height: 1080px;
+  height: 100vh;
   top: 0;
   left: 0;
 }
@@ -14,11 +15,31 @@
   object-fit: cover;
 }
 
+.shadow {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 .content {
-  @include mixin.maxWidth(1247px);
-  margin-bottom: 189px;
+  width: 74%;
+  height: calc(100vh - 160px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .title {
   margin-bottom: 80px;
+
+  @include mixin.media-w(breakpoints.$laptop) {
+    margin-bottom: 40px;
+  }
+
+  @include mixin.media-w(breakpoints.$laptop) {
+    margin-bottom: 28px;
+  }
 }

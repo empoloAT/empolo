@@ -5,8 +5,8 @@ import styles from "./cooperationSection.module.scss";
 
 type TProps = {
   posts: {
-    cooperationTitle: string
-  }
+    cooperationTitle: string;
+  };
 };
 
 export const CooperationSection: FunctionComponent<TProps> = ({ posts }) => {
@@ -14,7 +14,7 @@ export const CooperationSection: FunctionComponent<TProps> = ({ posts }) => {
     <section>
       <Container>
         <div className={styles.component}>
-          <H2>{posts.cooperationTitle}</H2>
+          <H2 className={styles.title}>{posts.cooperationTitle}</H2>
           <LogoButton>Let{"\u2019"}s Talk</LogoButton>
         </div>
       </Container>

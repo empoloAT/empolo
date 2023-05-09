@@ -5,10 +5,10 @@ import { H3, P } from "components";
 import styles from "./coreBusinessCard.module.scss";
 
 type TProps = {
-  imageSrc: string,
-  number: string,
-  title: string,
-  subtitle: string,
+  imageSrc: string;
+  number: string;
+  title: string;
+  subtitle: string;
 };
 
 export const CoreBusinessCard: FunctionComponent<TProps> = ({
@@ -19,11 +19,15 @@ export const CoreBusinessCard: FunctionComponent<TProps> = ({
 }) => {
   return (
     <div className={styles.component}>
-      <Image src={imageSrc} alt="Image" />
+      <Image
+        src={imageSrc}
+        alt="Image"
+        className={styles.image}
+      />
       <div>
-        <P>{number}</P>
+        <P className={styles.number}>{number}</P>
         <H3 className={styles.title}>{title}</H3>
-        <P>{subtitle}</P>
+        <P className={styles.subtitle}>{subtitle}</P>
       </div>
     </div>
   );

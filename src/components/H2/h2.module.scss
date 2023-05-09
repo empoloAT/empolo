@@ -1,4 +1,11 @@
+@use "styles/mixin";
+@use "styles/breakpoints";
+
 .component {
   font-weight: 700;
-  font-size: 80px;
+  @include mixin.fluidFont(10, 80, 1920);
+
+  @include mixin.media-w(breakpoints.$laptop) {
+    @include mixin.fluidFont(22, 40, 1024);
+  }
 }

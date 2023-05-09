@@ -1,8 +1,8 @@
 @use "styles/mixin";
+@use "styles/breakpoints";
 
 .component {
-  @include mixin.maxWidth(408px);
-  height: 500px;
+  width: 408px;
   background-color: var(--ctaYellow);
   border-radius: 44px;
   padding: 50px 40px 40px 40px;
@@ -10,10 +10,44 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex: 0 0 auto;
+  min-height: 500px;
+
+  @include mixin.media-w(breakpoints.$laptop) {
+    padding: 40px 34px 32px 40px;
+    min-height: 447px;
+  }
+
+  @include mixin.media-w(breakpoints.$laptop-l) {
+    width: 324px;
+    min-height: 428px;
+    padding: 55px 38px 40px 40px;
+  }
+}
+
+.image {
+  height: 60px;
+
+  @include mixin.media-w(breakpoints.$laptop) {
+    height: 52.5px;
+  }
+}
+
+.number {
+  font-size: 20px;
 }
 
 .title {
-  @include mixin.maxWidth(237px);
+  @include mixin.maxWidth(210px);
   font-weight: 600;
   margin: 12px 0;
+  @include mixin.fluidFont(36, 46, 1920);
+
+  @include mixin.media-w(breakpoints.$laptop-l) {
+    font-size: 46px;
+  }
+}
+
+.subtitle {
+  font-size: 20px;
 }

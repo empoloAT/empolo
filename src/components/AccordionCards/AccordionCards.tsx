@@ -5,18 +5,18 @@ import styles from "./accordionCards.module.scss";
 
 type TProps = {
   posts: {
-    secondSkillCardsTitle: string,
-    secondSkillCardsSubtitle: string,
-    thirdSkillCardsTitle: string,
-    thirdSkillCardsSubtitle: string,
-    fourthSkillCardsTitle: string,
-    fourthSkillCardsSubtitle: string,
-    fifthSkillCardsTitle: string,
-    fifthSkillCardsSubtitle: string,
-    sixthSkillCardsTitle: string,
-    sixthSkillCardsSubtitle: string,
-    seventhCardsTitle: string,
-    seventhCardsSubtitle: string,
+    secondSkillCardsTitle: string;
+    secondSkillCardsSubtitle: string;
+    thirdSkillCardsTitle: string;
+    thirdSkillCardsSubtitle: string;
+    fourthSkillCardsTitle: string;
+    fourthSkillCardsSubtitle: string;
+    fifthSkillCardsTitle: string;
+    fifthSkillCardsSubtitle: string;
+    sixthSkillCardsTitle: string;
+    sixthSkillCardsSubtitle: string;
+    seventhCardsTitle: string;
+    seventhCardsSubtitle: string;
   }
 };
 

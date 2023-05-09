@@ -1,31 +1,77 @@
 @use "styles/mixin";
+@use "styles/breakpoints";
 
 .component {
   background-color: var(--white);
+  padding: 6.8% 0 6.8% 0;
+
+  @include mixin.media-w(breakpoints.$laptop) {
+    padding: 70px 0;
+  }
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    padding-bottom: 20px;
+  }
 }
 
 .mainTitle {
   color: var(--fontBlack);
-  padding: 100px 0 80px 0;
+  margin-bottom: 4.9%;
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    margin-bottom: 6px;
+  }
 }
 
 .text {
   color: var(--fontBlack);
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    margin-top: 14px;
+  }
 }
 
 .gridContainer {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto auto;
-  grid-column-gap: 199px;
-  grid-row-gap: 120px;
-  padding-bottom: 106px;
+  grid-column-gap: 10%;
+  grid-row-gap: 80px;
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    grid-row-gap: 50px;
+  }
+}
+
+.flexContainer {
+  display: flex;
+  flex-direction: column;
 }
 
 .firstBlock {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 64px;
+
+  @include mixin.media-w(breakpoints.$laptop) {
+    gap: 34px;
+  }
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    gap: 0px;
+    margin-bottom: 20px;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  padding-bottom: 65.87%;
+  height: 0;
+  overflow: hidden;
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    margin: 20px 0;
+  }
 }
 
 .image {

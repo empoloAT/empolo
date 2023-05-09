@@ -1,3 +1,6 @@
+@use "styles/mixin";
+@use "styles/breakpoints";
+
 @keyframes scroll {
   from {
     transform: translateX(0);
@@ -7,12 +10,26 @@
   }
 }
 
+@include mixin.media-w(breakpoints.$laptop-l) {
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - 50px));
+    }
+  }
+}
+
 .component {
   display: flex;
   overflow: hidden;
   position: relative;
   gap: 100px;
-  height: 70px;
+
+  @include mixin.media-w(breakpoints.$laptop-l) {
+    gap: 50px;
+  }
 }
 
 .sliderTrack {
@@ -23,4 +40,22 @@
   min-width: 100%;
   gap: 100px;
   flex-shrink: 0;
+  margin-top: 10%;
+
+  @include mixin.media-w(breakpoints.$laptop-l) {
+    gap: 50px;
+  }
+}
+
+.image {
+  height: 59px;
+
+  @include mixin.media-w(breakpoints.$laptop) {
+    width: fit-content;
+    height: 49px;
+  }
+
+  @include mixin.media-w(breakpoints.$laptop-l) {
+    height: 28px;
+  }
 }

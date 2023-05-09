@@ -4,9 +4,9 @@ import { P, H3 } from "components";
 import styles from "./skillCard.module.scss";
 
 type TProps = {
-  number: string,
-  title: string,
-  subtitle: string,
+  number: string;
+  title: string;
+  subtitle: string;
 };
 
 export const SkillCard: FunctionComponent<TProps> = ({

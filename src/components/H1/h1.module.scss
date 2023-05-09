@@ -1,7 +1,9 @@
+@use "styles/mixin";
+
 .component {
   color: var(--white);
   font-weight: 700;
-  font-size: 80px;
+  @include mixin.fluidFont(24, 80, 1920);
   z-index: 2;
   position: relative;
 }

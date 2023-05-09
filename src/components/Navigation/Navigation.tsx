@@ -1,27 +1,40 @@
+import classNames from "classnames";
+import { useContext } from "react";
 import Link from "next/link";
+import { BurgerContext } from "context";
 
 import styles from "./navigation.module.scss";
 
-export const Navigation = () => {
+type Props = {
+  className?: string;
+  direction?: "column";
+};
+
+export const Navigation = ({ className: propsClassName, direction }: Props) => {
+  const navigationStyles = classNames(styles.component, propsClassName);
+  const listDirection = classNames({ [styles.columnDirection]: direction === "column" });
+  const listStyles = classNames(styles.list, listDirection)
+  const { activeBurger, setActiveBurger} = useContext(BurgerContext);
+
   return (
-    <nav className={styles.component}>
-      <ul className={styles.list}>
-        <li className={styles.listItem}>
+    <nav className={navigationStyles}>
+      <ul className={activeBurger ? styles.activeBurger : listStyles}>
+        <li>
           <Link href="/">
             About Us
           </Link>
         </li>
-        <li className={styles.listItem}>
+        <li>
           <Link href="/">
             Services
           </Link>
         </li>
-        <li className={styles.listItem}>
+        <li>
           <Link href="/">
             Projects
           </Link>
         </li>
-        <li className={styles.listItem}>
+        <li>
           <Link href="/">
             Team
           </Link>

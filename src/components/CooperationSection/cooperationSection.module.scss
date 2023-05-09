@@ -1,7 +1,12 @@
+@use "styles/mixin";
+
 .component {
-  padding: 100px 120px;
   color: var(--fontBlack);
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
+  padding: 6.8% 0 4.9% 0;
+}
+
+.title {
+  margin-bottom: 6.0%;
+  font-weight: 600;
+  @include mixin.fluidFont(20, 104, 1920);
 }
