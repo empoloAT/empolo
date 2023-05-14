@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { golos } from "styles/fonts/golos";
 import { FunctionComponent } from "react";
 import { useController } from "react-hook-form";
 
@@ -31,7 +32,7 @@ export const Input: FunctionComponent<TProps> = ({
   const inputClassName = classNames(styles.component, {
     [styles.opened]: inputType === "opened",
     [styles.closed]: inputType === "closed"
-  }, propsClassName);
+  }, propsClassName, golos.className);
 
   return (
     <div className={classNames(inputStyles, containerClassName)}>

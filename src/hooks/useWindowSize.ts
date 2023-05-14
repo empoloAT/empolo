@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 
-interface WindowSize {
+interface IWindowSize {
   width: number;
   height: number;
+};
+
+interface UseWindowSize extends IWindowSize {
   isLaptop: boolean;
   isLaptopM: boolean;
   isLaptopS: boolean;
-};
+}
 
-export function useWindowSize(): WindowSize {
-  const [windowSize, setWindowSize] = useState<WindowSize>({
+export function useWindowSize(): UseWindowSize {
+  const [windowSize, setWindowSize] = useState<IWindowSize>({
     width: 0,
     height: 0,
-    isLaptop: false,
-    isLaptopM: false,
-    isLaptopS: false,
   });
 
   useEffect(() => {
@@ -25,9 +25,6 @@ export function useWindowSize(): WindowSize {
         setWindowSize({
           width,
           height,
-          isLaptop: width <= 1024,
-          isLaptopM: width <= 800,
-          isLaptopS: width <= 600,
         });
       };
     
@@ -37,7 +34,12 @@ export function useWindowSize(): WindowSize {
     
       return () => window.removeEventListener("resize", handleSize);
     }
-  }, [windowSize.isLaptop, windowSize.isLaptopS, windowSize.isLaptopM]);
+  }, []);
 
-  return windowSize;
+  return {
+    ...windowSize, 
+    isLaptop: windowSize.width <= 1024,
+    isLaptopM: windowSize.width <= 800,
+    isLaptopS: windowSize.width <= 600,
+  };
 };

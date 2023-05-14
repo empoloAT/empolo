@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import styles from "./logo.module.scss";
 import logoSrc from "./Logo.svg";
+import Link from "next/link";
 
 type Props = {
   size?: "s";
@@ -17,11 +18,13 @@ export const Logo = ({size}: Props) => {
 
   return (
     <div className={logoClassName}>
-      <Image
-        src={logoSrc}
-        alt="Logo"
-        fill
-      />
+      <Link href="/">
+        <Image
+          src={logoSrc}
+          alt="Logo"
+          fill
+        />
+      </Link>
     </div>
   );
 };

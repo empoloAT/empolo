@@ -1,5 +1,6 @@
 import Image from "next/legacy/image";
 import { FunctionComponent } from "react";
+import { useWindowSize } from "hooks";
 import { H3, P } from "components";
 import { useToggle } from "hooks";
 
@@ -23,6 +24,7 @@ export const RealCasesImage: FunctionComponent<TProps> = ({
   className: propsClassName = "",
 }) => {
   const [ isHovered, toggleHover ] = useToggle();
+  const { isLaptop } = useWindowSize();
 
   return (
     <div className={`${styles.imageWrapper} ${propsClassName}`}>
@@ -37,14 +39,21 @@ export const RealCasesImage: FunctionComponent<TProps> = ({
         height={height}
         layout="fill"
       />
-      <div
-        className={isHovered ? styles.imageHovered : styles.imageNotHovered}
-        onMouseEnter={toggleHover}
-        onMouseLeave={toggleHover}
-      >
-        <H3>{title}</H3>
-        <P className={styles.subtitle}>{subtitle}</P>
-      </div>
+      {isLaptop ?
+        <div className={styles.imageHovered}>
+          <H3>{title}</H3>
+          <P className={styles.subtitle}>{subtitle}</P>
+        </div>
+      :
+        <div
+          className={isHovered ? styles.imageHovered : styles.imageNotHovered}
+          onMouseEnter={toggleHover}
+          onMouseLeave={toggleHover}
+        >
+          <H3>{title}</H3>
+          <P className={styles.subtitle}>{subtitle}</P>
+        </div>
+      }
     </div>
   );
 };

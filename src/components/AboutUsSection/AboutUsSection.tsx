@@ -25,7 +25,7 @@ export const AboutUsSection: FunctionComponent<TProps> = ({
   const { isLaptopS } = useWindowSize();
 
   return (
-    <section className={styles.component}>
+    <section id="aboutUs" className={styles.component}>
       <Container>
         <H2 className={styles.mainTitle}>About Us</H2>
         {isLaptopS ?

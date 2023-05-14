@@ -49,6 +49,7 @@
 
 .image {
   height: 59px;
+  filter: contrast(0);
 
   @include mixin.media-w(breakpoints.$laptop) {
     width: fit-content;
@@ -58,4 +59,8 @@
   @include mixin.media-w(breakpoints.$laptop-l) {
     height: 28px;
   }
+}
+
+.image:hover {
+  filter: contrast(1);
 }

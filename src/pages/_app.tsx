@@ -1,4 +1,3 @@
-import "@fontsource/golos-ui";;
 import type { AppProps } from "next/app";
 import type { NextPage } from "next";
 import { FunctionComponent, ReactElement, ReactNode } from "react";

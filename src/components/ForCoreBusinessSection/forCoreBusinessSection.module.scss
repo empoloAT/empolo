@@ -6,7 +6,6 @@
   padding: 6.8% 0 6.8% 0;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 
   @include mixin.media-w(breakpoints.$laptop-s) {
     padding: 60px 0;
@@ -20,23 +19,4 @@
 .cardsContainer {
   display: flex;
   gap: 16px;
-  flex-wrap: nowrap;
-  overflow-x: hidden;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  padding-left: 60px;
-  margin: 0 auto;
-
-  @include mixin.media-w(breakpoints.$laptop-l) {
-    padding-left: 40px;
-  }
-
-  @include mixin.media-w(breakpoints.$laptop-s) {
-    padding-left: 20px;
-  }
-}
-
-.cardsContainer::-webkit-scrollbar {
-  width: 0;
-  height: 0;
 }

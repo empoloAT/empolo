@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { golos } from "styles/fonts/golos";
 import { useController } from "react-hook-form";
 import { FunctionComponent } from "react";
 
@@ -28,7 +29,7 @@ export const Textarea: FunctionComponent<TProps> = ({
   const inputStyles = fieldState.error ? styles.inputError : styles.container;
 
   const textareaValue = propsValue ? propsValue : field.value;
-  const textareaClassName = classNames(styles.component);
+  const textareaClassName = classNames(styles.component, golos.className);
 
   return (
     <div className={classNames(inputStyles, containerClassName)}>

@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { BurgerContext } from "context";
 import { Button } from "components";
 
-import styles from "./button.module.scss";
 import burgerSrc from "./img/Burger.svg";
 
 export const BurgerButton = () => {

@@ -70,6 +70,14 @@
   right: 6px;
 }
 
+.button:hover {
+  background-color: var(--bgHoverGray);
+}
+
+.button:active {
+  background-color: var(--borderGray);
+}
+
 .copyright {
   display: flex;
   justify-content: space-between;

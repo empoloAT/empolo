@@ -6,6 +6,8 @@
   --fontGray: #B8B8B8;
   --bgGray: #1A292C;
   --borderGray: #A1A3A5;
+  --bgHoverGray: #E6E6E6;
+  --errorRed: #FF2435; 
 }
 
 *, *:after, *:before {
@@ -14,13 +16,12 @@
 
 html,
 body {
-  font-family: Golos UI, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   padding: 0;
   margin: 0;
   color: var(--white);
   height: 100%;
   background-color: var(--white);
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6, ul, li, p {

@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import type { ReactElement } from "react";
 import { GetAllMedia } from "utils/media";
 import { GetMainTitle } from "utils/mainTitle";
@@ -20,6 +21,13 @@ const Home = () => {
   const mediaUrls = GetAllMedia();
   const mainTitle = GetMainTitle();
   const posts = GetAllPosts();
+  const contactRef = useRef<HTMLDivElement>(null);
+  
+  const handleClick = () => {
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -28,6 +36,7 @@ const Home = () => {
       />
       <EmpoloContent
         title={mainTitle}
+        onClick={handleClick}
       />
       <AboutUsSection 
         firstUrl={mediaUrls.firstImageUrl}
@@ -35,17 +44,27 @@ const Home = () => {
         posts={posts}
       />
       <ForCoreBusinessSection posts={posts} />
-      <SkillCardsSection posts={posts} />
+      <SkillCardsSection
+        posts={posts}
+        onClick={handleClick}
+      />
       <RealCasesSection
         posts={posts}
         urls={mediaUrls}
       />
-      <CooperationSection posts={posts} />
+      <CooperationSection
+        posts={posts}
+        onClick={handleClick}
+      />
       <OurTeam 
         posts={posts}
         urls={mediaUrls}
+        onClick={handleClick}
       />
-      <AccordionSEO />
+      <AccordionSEO
+        posts={posts}
+      />
+      <div ref={contactRef}></div>
       <ContactUS />
     </>
   );

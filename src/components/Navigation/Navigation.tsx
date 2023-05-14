@@ -19,23 +19,23 @@ export const Navigation = ({ className: propsClassName, direction }: Props) => {
   return (
     <nav className={navigationStyles}>
       <ul className={activeBurger ? styles.activeBurger : listStyles}>
-        <li>
-          <Link href="/">
+        <li className={styles.link}>
+          <Link href="#aboutUs">
             About Us
           </Link>
         </li>
-        <li>
-          <Link href="/">
+        <li className={styles.link}>
+          <Link href="#skillCards">
             Services
           </Link>
         </li>
-        <li>
-          <Link href="/">
+        <li className={styles.link}>
+          <Link href="#realCases">
             Projects
           </Link>
         </li>
-        <li>
-          <Link href="/">
+        <li className={styles.link}>
+          <Link href="#ourTeam">
             Team
           </Link>
         </li>

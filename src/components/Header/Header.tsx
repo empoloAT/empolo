@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useContext, useRef } from "react";
 import {
   Logo,
@@ -24,24 +25,28 @@ export const Header = () => {
         {isLaptop ?
           <div className={styles.burgerContainer} ref={burgerRef}>
             {!isLaptopS &&
-              <Button
-                className={styles.headerButton}
-                size="s"
-              >
-                Contact Now
-              </Button>
+              <Link href="#contactUs">
+                <Button
+                  className={styles.headerButton}
+                  size="s"
+                >
+                  Contact Now
+                </Button>
+              </Link>
             }
             <BurgerButton />
           </div>
           :
           <>
             <Navigation />
-            <Button
-              className={styles.headerButton}
-              size="s" 
-            >
-              Contact Now
-            </Button>
+            <Link href="#contactUs">
+              <Button
+                className={styles.headerButton}
+                size="s" 
+              >
+                Contact Now
+              </Button>
+            </Link>
           </>
         }
       </div>

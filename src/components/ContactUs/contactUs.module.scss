@@ -72,3 +72,12 @@
     margin-top: 28px;
   }
 }
+
+.button:hover {
+  background-color: var(--white);
+  color: var(--fontBlack);
+}
+
+.button:active {
+  background-color: var(--bgHoverGray);
+}

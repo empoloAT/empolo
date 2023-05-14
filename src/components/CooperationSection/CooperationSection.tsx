@@ -7,15 +7,20 @@ type TProps = {
   posts: {
     cooperationTitle: string;
   };
+  onClick?: () => void;
 };
 
-export const CooperationSection: FunctionComponent<TProps> = ({ posts }) => {
+export const CooperationSection: FunctionComponent<TProps> = ({ posts, onClick }) => {
   return (
     <section>
       <Container>
         <div className={styles.component}>
           <H2 className={styles.title}>{posts.cooperationTitle}</H2>
-          <LogoButton>Let{"\u2019"}s Talk</LogoButton>
+          <LogoButton
+            onClick={onClick}
+          >
+            Let{"\u2019"}s Talk
+          </LogoButton>
         </div>
       </Container>
     </section>
