@@ -32,7 +32,9 @@ export const Footer = () => {
     <footer className={styles.component}>
       <Container>
         <div className={styles.navigation}>
-          <Logo size="s" />
+          <div className={styles.logoWrapper}>
+            <Logo />
+          </div>
           <Navigation
             direction="column"
             className={styles.list}

@@ -25,7 +25,7 @@ export const Header = () => {
         {isLaptop ?
           <div className={styles.burgerContainer} ref={burgerRef}>
             {!isLaptopS &&
-              <Link href="#contactUs">
+              <Link href="#contact-us">
                 <Button
                   className={styles.headerButton}
                   size="s"
@@ -39,7 +39,7 @@ export const Header = () => {
           :
           <>
             <Navigation />
-            <Link href="#contactUs">
+            <Link href="#contact-us">
               <Button
                 className={styles.headerButton}
                 size="s" 

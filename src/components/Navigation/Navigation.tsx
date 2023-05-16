@@ -20,22 +20,22 @@ export const Navigation = ({ className: propsClassName, direction }: Props) => {
     <nav className={navigationStyles}>
       <ul className={activeBurger ? styles.activeBurger : listStyles}>
         <li className={styles.link}>
-          <Link href="#aboutUs">
+          <Link href="#about-us">
             About Us
           </Link>
         </li>
         <li className={styles.link}>
-          <Link href="#skillCards">
+          <Link href="#skill-cards">
             Services
           </Link>
         </li>
         <li className={styles.link}>
-          <Link href="#realCases">
+          <Link href="#real-cases">
             Projects
           </Link>
         </li>
         <li className={styles.link}>
-          <Link href="#ourTeam">
+          <Link href="#our-team">
             Team
           </Link>
         </li>

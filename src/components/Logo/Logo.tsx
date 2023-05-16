@@ -1,9 +1,9 @@
+import Link from "next/link";
 import classNames from "classnames";
 import Image from "next/image";
 
 import styles from "./logo.module.scss";
 import logoSrc from "./Logo.svg";
-import Link from "next/link";
 
 type Props = {
   size?: "s";

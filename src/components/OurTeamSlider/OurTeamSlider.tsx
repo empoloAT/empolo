@@ -32,6 +32,9 @@ export const OurTeamSlider: FunctionComponent<TProps> = ({ posts, urls }) => {
         grabCursor={true}
         modules={[EffectCards]}
         loop={true}
+        cardsEffect={{
+          slideShadows: false
+        }}
       >
         <SwiperSlide
           className={styles.slide}

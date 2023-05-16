@@ -26,7 +26,7 @@ export const OurTeam: FunctionComponent<TProps> = ({ posts, urls, onClick }) => 
   const { isLaptopM } = useWindowSize();
 
   return (
-    <section id="ourTeam" className={styles.component}>
+    <section id="our-team" className={styles.component}>
       <Container>
         {isLaptopM ?
           <div className={styles.contentWrapper}>

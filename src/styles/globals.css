@@ -43,3 +43,7 @@ ul {
     color-scheme: dark;
   }
 }
+
+address {
+  font-style: normal;
+}

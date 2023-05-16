@@ -24,7 +24,7 @@ type TProps = {
 
 export const SkillCardsSection: FunctionComponent<TProps> = ({ posts, onClick }) => {
   return (
-    <section id="skillCards" className={styles.component}>
+    <section id="skill-cards" className={styles.component}>
       <Container className={styles.wrapper}>
         <div className={styles.container}>
           <div className={styles.titleContainer}>
