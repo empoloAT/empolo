@@ -10,10 +10,12 @@ export const BurgerMenu = () => {
 
   return (
     <div className={activeBurger ? styles.activeComponent : styles.component}>
-      <Navigation
-        className={styles.navigation}
-      />
-      <CrossButton />
+      <div className={styles.burger}>
+        <Navigation
+          className={styles.navigation}
+        />
+        <CrossButton />
+      </div>
     </div>
   );
 };

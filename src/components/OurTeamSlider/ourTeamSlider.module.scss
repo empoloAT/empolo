@@ -1,0 +1,65 @@
+@use "styles/mixin";
+@use "styles/breakpoints";
+
+.imagesWrapper {
+  width: 50%;
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.slider {
+  overflow: visible;
+  z-index: 3;
+}
+
+.slide {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 78%;
+  padding-top: calc(730 / 608 * 78%);
+  height: 0;
+  overflow: hidden;
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    margin-bottom: 28px;
+    width: 100%;
+    padding-top: calc(730 / 608 * 100%);
+  }
+}
+
+.image {
+  object-fit: cover;
+  border-radius: 32px;
+  cursor: pointer;
+  filter: grayscale(1);
+}
+
+.name {
+  position: absolute;
+  bottom: 12.1%;
+  left: 11.2%;
+  @include mixin.fluidFont(4, 34, 1920);
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    @include mixin.fluidFont(10, 34, 800);
+  }
+}
+
+.specialty {
+  position: absolute;
+  bottom: 7.4%;
+  left: 11.2%;
+  font-weight: 400;
+  @include mixin.fluidFont(6, 20, 1920);
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    @include mixin.fluidFont(6, 20, 800);
+  }
+}

@@ -3,27 +3,40 @@
 
 .component {
   @include mixin.maxWidth(831px);
-  min-height: 298px;
   background-color: var(--bgBlack);
   color: var(--white);
-  padding: 48px;
-  border-radius: 44px;
+  padding: 48px 48px 18px 48px;
   display: grid;
   grid-template-columns: 37px auto;
-  grid-row-gap: 40px;
+  grid-row-gap: 22px;
   grid-column-gap: 40px;
 
   @include mixin.media-w(breakpoints.$skillCards) {
-    padding: 48px 60px;
     @include mixin.maxWidth(1350px);
   }
 
   @include mixin.media-w(breakpoints.$laptop-m) {
-    padding: 20px 34px 58px 34px;
-    border-radius: 0;
-    grid-row-gap: 34px;
+    padding: 20px 34px 18px 34px;
+    grid-row-gap: 16px;
     grid-column-gap: 20px;
     min-height: auto;
+  }
+}
+
+.component:first-child {
+  border-radius: 44px 44px 0 0;
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    border-radius: 0;
+  }
+}
+
+.component:last-child {
+  padding-bottom: 48px;
+  border-radius: 0 0 44px 44px;
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    border-radius: 0;
   }
 }
 

@@ -24,7 +24,7 @@ type TProps = {
 
 export const RealCasesSection: FunctionComponent<TProps> = ({ posts, urls }) => {
   return (
-    <section className={styles.component}>
+    <section id="real-cases" className={styles.component}>
       <Container>
         <H2>Real Cases</H2>
         <div className={styles.container}>

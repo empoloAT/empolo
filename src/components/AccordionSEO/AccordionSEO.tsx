@@ -1,11 +1,23 @@
-import { useState } from "react";
-import { data } from "./data";
+import { FunctionComponent, useState } from "react";
 import { Container, H2 } from "components"
 import { AccordionItem } from "./AccordionItem";
 
 import styles from "./accordionSEO.module.scss";
 
-export const AccordionSEO = () => {
+type TProps = {
+  posts: {
+    firstSEOTitle: string;
+    firstSEOSubtitle: string;
+    secondSEOTitle: string;
+    secondSEOSubtitle: string;
+    thirdSEOTitle: string;
+    thirdSEOSubtitle: string;
+    fourthSEOTitle: string;
+    fourthSEOSubtitle: string;
+  }
+};
+
+export const AccordionSEO: FunctionComponent<TProps> = ({ posts }) => {
   const [activeTab, setActiveTab] = useState('');
 
   return (
@@ -14,15 +26,30 @@ export const AccordionSEO = () => {
         <div className={styles.contentWrapper}>
           <H2 className={styles.mainTitle}>SEO</H2>
           <div className={styles.contentContainer}>
-            {data.map(({ title, content }) => (
-              <AccordionItem
-                key={title}
-                title={title}
-                content={content}
-                activeTab={activeTab}
-                setActiveTab={setActiveTab}
-              />
-            ))}
+            <AccordionItem
+              title={posts.firstSEOTitle}
+              content={posts.firstSEOSubtitle}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+            />
+            <AccordionItem
+              title={posts.secondSEOTitle}
+              content={posts.secondSEOSubtitle}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+            />
+            <AccordionItem
+              title={posts.thirdSEOTitle}
+              content={posts.thirdSEOSubtitle}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+            />
+            <AccordionItem
+              title={posts.fourthSEOTitle}
+              content={posts.fourthSEOSubtitle}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+            />
           </div>
         </div>
       </Container>

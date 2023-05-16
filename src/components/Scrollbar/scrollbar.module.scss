@@ -1,0 +1,27 @@
+@use "styles/mixin";
+@use "styles/breakpoints";
+
+.component {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  max-width: 1740px;
+  width: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-left: 60px;
+  margin: 0 auto;
+  -webkit-overflow-scrolling: touch;
+
+  @include mixin.media-w(breakpoints.$laptop-l) {
+    padding-left: 40px;
+  }
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    padding-left: 20px;
+  }
+}
+
+.component::-webkit-scrollbar {
+  display: none;
+}

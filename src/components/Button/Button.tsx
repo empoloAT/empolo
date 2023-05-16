@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { golos } from "styles/fonts/golos";
 import { 
   ReactNode,
   ButtonHTMLAttributes,
@@ -33,6 +34,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(({
   const buttonClassName = classNames(
     styles.component,
     buttonSize,
+    golos.className,
     propsClassName
   );
 

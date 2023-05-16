@@ -3,9 +3,7 @@
 
 .component {
   position: absolute;
-  transform: translateX(-100vw);
-  height: 100vh;
-  padding: 65px 68px 0 60px;
+  right: -100vw;
 
   @include mixin.media-w(breakpoints.$mobile) {
     padding: 18px 26px 0 20px;
@@ -17,22 +15,40 @@
   right: 0;
   top: 0;
   transition: 0.3s ease-in-out;
+  z-index: 4;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.burger {
   width: 341px;
-  height: 100vh;
   background-color: var(--ctaYellow);
   color: var(--fontBlack);
-  padding: 65px 68px 0 60px;
-  z-index: 3;
+  padding: 60px 65px 0 60px;
+  height: 100vh;
   display: flex;
   justify-content: space-between;
 
-  @include mixin.media-w(breakpoints.$mobile) {
+  @include mixin.media-w(breakpoints.$laptop-l) {
+    padding: 60px 45px 0 60px;
+  }
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    padding: 45px 25px 0 25px;
+  }
+
+  @include mixin.media-w(breakpoints.$mobileBurger) {
     width: 100%;
-    padding: 18px 26px 0 20px;
+    padding: 44px 40px 0 20px;
   }
 }
 
 .navigation {
   height: 100%;
   width: 70% !important;
+}
+
+.navigation>ul>li:hover {
+  color:var(--fontGray);
 }

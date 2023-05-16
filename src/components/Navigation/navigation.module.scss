@@ -38,3 +38,11 @@
     align-items: flex-start;
   }
 }
+
+.link:hover {
+  color: var(--ctaYellow);
+}
+
+.link:active {
+  color: rgba(244,	234,	112, 0.9)
+}

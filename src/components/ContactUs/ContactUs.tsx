@@ -26,7 +26,7 @@ export const ContactUS = () => {
   };
 
   return (
-    <section className={styles.component}>
+    <section id="contact-us" className={styles.component}>
       <Container className={styles.wrapper}>
         <div className={styles.contentWrapper}>
           <H2 className={styles.mainTitle}>Contact Us</H2>

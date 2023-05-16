@@ -31,3 +31,5 @@ export * from "./Copyright";
 export * from "./PrivacyPolicy";
 export * from "./TermsConditions";
 export * from "./BurgerMenu";
+export * from "./Scrollbar";
+export * from "./OurTeamSlider"

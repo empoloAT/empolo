@@ -1,3 +1,4 @@
+import Link from "next/link";
 import classNames from "classnames";
 import Image from "next/image";
 
@@ -17,11 +18,13 @@ export const Logo = ({size}: Props) => {
 
   return (
     <div className={logoClassName}>
-      <Image
-        src={logoSrc}
-        alt="Logo"
-        fill
-      />
+      <Link href="/">
+        <Image
+          src={logoSrc}
+          alt="Logo"
+          fill
+        />
+      </Link>
     </div>
   );
 };

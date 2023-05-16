@@ -16,33 +16,12 @@
   }
 }
 
-.image {
-  object-fit: cover;
-  border-radius: 32px;
-  cursor: pointer;
-  filter: grayscale(1);
-}
-
 .titleWrapper {
   @include mixin.maxWidth(671px);
   width: 39.7%;
 
   @include mixin.media-w(breakpoints.$laptop-m) {
     width: 100%;
-  }
-}
-
-.imagesWrapper {
-  position: relative;
-  width: 34.6%;
-  padding-top: calc(730 / 608 * 34.6%);
-  height: 0;
-  overflow: hidden;
-
-  @include mixin.media-w(breakpoints.$laptop-m) {
-    margin-bottom: 28px;
-    width: 64%;
-    padding-top: calc(730 / 608 * 64%);
   }
 }
 

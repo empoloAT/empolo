@@ -1,5 +1,11 @@
 import { FunctionComponent } from "react";
-import { Container, H2, CoreBusinessCard, InfiniteSlider } from "components";
+import {
+  Container,
+  H2,
+  CoreBusinessCard,
+  InfiniteSlider,
+  Scrollbar
+} from "components";
 
 import styles from "./forCoreBusinessSection.module.scss";
 import arrowSrc from "./img/Arrow.svg";
@@ -28,7 +34,9 @@ export const ForCoreBusinessSection: FunctionComponent<TProps> = ({ posts }) => 
       <Container>
         <H2 className={styles.title}>For core business</H2>
       </Container>
-      <div className={styles.cardsContainer}>
+      <div className={styles.block}>
+      <Scrollbar>
+        <div className={styles.cardsContainer}>
         <CoreBusinessCard
           imageSrc={arrowSrc}
           number={cardNumber[0]}
@@ -52,6 +60,8 @@ export const ForCoreBusinessSection: FunctionComponent<TProps> = ({ posts }) => 
           title={posts.fourthCardTitle}
           subtitle={posts.fourthCardSubTitle}
         />
+        </div>
+      </Scrollbar>
       </div>
       <InfiniteSlider />
     </section>

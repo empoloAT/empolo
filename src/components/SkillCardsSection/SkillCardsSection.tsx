@@ -18,18 +18,23 @@ type TProps = {
     sixthSkillCardsSubtitle: string;
     seventhCardsTitle: string;
     seventhCardsSubtitle: string;
-  }
+  };
+  onClick: () => void;
 };
 
-export const SkillCardsSection: FunctionComponent<TProps> = ({ posts }) => {
+export const SkillCardsSection: FunctionComponent<TProps> = ({ posts, onClick }) => {
   return (
-    <section className={styles.component}>
+    <section id="skill-cards" className={styles.component}>
       <Container className={styles.wrapper}>
         <div className={styles.container}>
           <div className={styles.titleContainer}>
             <H2>Skill Cards</H2>
             <P className={styles.subtitle}>{posts.firstSkillCardsTitle}</P>
-            <LogoButton>Let{"\u2019"}s Talk</LogoButton>
+            <LogoButton
+              onClick={onClick}
+            >
+              Let{"\u2019"}s Talk
+            </LogoButton>
           </div>
           <div className={styles.skillCardsContainer}>
             <AccordionCards posts={posts} />

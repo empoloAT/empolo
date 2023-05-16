@@ -1,39 +1,47 @@
-import Image from "next/image";
 import { FunctionComponent } from "react";
 import { useWindowSize } from "hooks";
-import { H2, P, LogoButton, Container } from "components";
+import { H2, P, LogoButton, Container, OurTeamSlider } from "components";
 
 import styles from "./OurTeam.module.scss";
 
 type TProps = {
   posts: {
     ourTeamTitle: string;
-  },
+    firstEmployeeName: string;
+    firstEmployeeSpecialty: string;
+    secondEmployeeName: string;
+    secondEmployeeSpecialty: string;
+    thirdEmployeeName: string;
+    thirdEmployeeSpecialty: string;
+  };
   urls: {
     seventhImageUrl: string;
-  }
+    eighthImageUrl: string;
+    ninthImageUrl: string;
+  };
+  onClick: () => void;
 };
 
-export const OurTeam: FunctionComponent<TProps> = ({ posts, urls }) => {
+export const OurTeam: FunctionComponent<TProps> = ({ posts, urls, onClick }) => {
   const { isLaptopM } = useWindowSize();
 
   return (
-    <section className={styles.component}>
+    <section id="our-team" className={styles.component}>
       <Container>
         {isLaptopM ?
           <div className={styles.contentWrapper}>
             <div className={styles.titleWrapper}>
               <H2>Our Team</H2>
               <P className={styles.subtitle}>{posts.ourTeamTitle}</P>
-              <div className={styles.imagesWrapper}>
-                <Image
-                  className={styles.image}
-                  src={urls.seventhImageUrl}
-                  alt="Image"
-                  fill
-                />
-              </div>
-              <LogoButton>Join Our Team</LogoButton>
+              <OurTeamSlider
+                posts={posts}
+                urls={urls}
+              />
+              <LogoButton
+                onClick={onClick}
+              >
+                Join Our Team
+              </LogoButton>
             </div>
           </div>
           :
@@ -41,16 +49,16 @@ export const OurTeam: FunctionComponent<TProps> = ({ posts, urls }) => {
             <div className={styles.titleWrapper}>
               <H2>Our Team</H2>
               <P className={styles.subtitle}>{posts.ourTeamTitle}</P>
-              <LogoButton>Join Our Team</LogoButton>
+              <LogoButton
+                onClick={onClick}
+              >
+                Join Our Team
+              </LogoButton>
             </div>
-            <div className={styles.imagesWrapper}>
-              <Image
-                className={styles.image}
-                src={urls.seventhImageUrl}
-                alt="Image"
-                fill
-              />
-            </div>
+            <OurTeamSlider
+              posts={posts}
+              urls={urls}
+            />
           </div>
         }
       </Container>

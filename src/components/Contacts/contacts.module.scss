@@ -1,10 +1,20 @@
 @use "styles/mixin";
 @use "styles/breakpoints";
 
+.component {
+  height: 53%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    height: 70%;
+  }
+}
+
 .subtitle {
   @include mixin.fluidFont(18, 32, 1920);
   font-weight: 600;
-  margin-bottom: 12.4%;
 
   @include mixin.media-w(breakpoints.$laptop) {
     @include mixin.fluidFont(14, 24, 1024);
@@ -12,7 +22,6 @@
 
   @include mixin.media-w(breakpoints.$laptop-s) {
     font-weight: 500;
-    margin-bottom: 14px;
   }
 }
 
