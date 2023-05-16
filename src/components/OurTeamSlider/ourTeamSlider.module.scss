@@ -10,6 +10,11 @@
   }
 }
 
+.slider {
+  overflow: visible;
+  z-index: 3;
+}
+
 .slide {
   display: flex !important;
   justify-content: center !important;

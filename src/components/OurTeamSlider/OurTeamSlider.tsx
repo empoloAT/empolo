@@ -28,6 +28,7 @@ export const OurTeamSlider: FunctionComponent<TProps> = ({ posts, urls }) => {
   return (
     <div className={styles.imagesWrapper}>
       <Swiper
+        className={styles.slider}
         effect={"cards"}
         grabCursor={true}
         modules={[EffectCards]}

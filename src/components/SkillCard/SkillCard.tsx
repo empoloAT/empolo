@@ -7,8 +7,8 @@ type TProps = {
   number: string;
   title: string;
   subtitle: string;
-  activeNumber: number;
-  setActiveNumber: Dispatch<SetStateAction<number>>;
+  activeTab: number;
+  setActiveTab: Dispatch<SetStateAction<number>>;
   index: number;
 };
 
@@ -16,14 +16,14 @@ export const SkillCard: FunctionComponent<TProps> = ({
   number,
   title,
   subtitle,
-  activeNumber,
-  setActiveNumber,
+  activeTab,
+  setActiveTab,
   index
 }) => {
-  const isActive = index === activeNumber;
+  const isActive = index === activeTab;
 
   const handleClick = () => {
-    setActiveNumber(index);
+    setActiveTab(index);
   };
 
   return (
