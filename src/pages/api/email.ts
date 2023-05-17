@@ -10,7 +10,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
 			let data = {
 				sender: { name: name, email: email },
-				to: [{ email: "gleb.krishin@icloud.com" }],
+				to: [{ email: "marko.kalabota@empolo.at" }],
 				subject: "Message from: " + name,
 				textContent: message,
 			};
