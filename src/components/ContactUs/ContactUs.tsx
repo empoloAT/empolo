@@ -15,14 +15,28 @@ import styles from "./contactUs.module.scss";
 interface IForm {
   name: string;
   email: string;
+  message: string;
 };
 
 export const ContactUS = () => {
   const { control, handleSubmit: validateBeforeSubmit } = useForm<IForm>({});
   const { isLaptopS } = useWindowSize();
 
-  const handleSubmit = (data: IForm) => {
-    console.log(data);
+  const handleSubmit = async ({ name, email, message }: IForm) => {
+    const res = await fetch("/api/email", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ name, email, message })
+    });
+
+    if (res.ok) {
+      const responseJson = await res.json();
+      console.log(responseJson);
+    } else {
+      console.error('Error sending email');
+    }
   };
 
   return (
