@@ -79,7 +79,7 @@
 }
 
 .input {
-  padding-right: 112px;
+  padding-right: 130px;
 }
 
 .button {
@@ -125,6 +125,10 @@
   display: flex;
   justify-content: space-between;
   min-width: 274px;
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    min-width: 254px;
+  }
 
   @include mixin.media-w(breakpoints.$laptop-s) {
     width: 100%;

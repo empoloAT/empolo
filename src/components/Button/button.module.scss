@@ -65,7 +65,6 @@
 }
 
 .sizeReg {
-  @include mixin.maxWidth(104px);
   padding: 10.5px 19.5px;
   font-size: 16px;
 }
