@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 import { useWindowSize } from "hooks";
 import {
   Social,
@@ -16,6 +17,7 @@ import {
 
 import styles from "./footer.module.scss";
 
+
 interface IForm {
   email: string;
 };
@@ -24,8 +26,21 @@ export const Footer = () => {
   const { control, handleSubmit: validateBeforeSubmit } = useForm<IForm>({});
   const { isLaptopS } = useWindowSize();
 
-  const handleSubmit = (data: IForm) => {
-    console.log(data);
+  const handleSubmit = async ({ email }: IForm) => {
+    const res = await fetch("/api/contacts", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email})
+    });
+
+    if (res.ok) {
+      const responseJson = await res.json();
+      console.log(responseJson);
+    } else {
+      console.error('Error sending email');
+    }
   };
 
   return (
@@ -54,12 +69,13 @@ export const Footer = () => {
               placeholder="Enter your email"
               inputType="closed"
               control={control}
+              className={styles.input}
             />
             <Button
               className={styles.button}
               size="r"
             >
-              Register
+              Subscribe
             </Button>
           </form>
           <P className={styles.text}>By subscribing you agree to with our Privacy Policy</P>

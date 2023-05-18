@@ -22,6 +22,11 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.9",
     "sass": "^1.62.0",
+<<<<<<< HEAD
+=======
+    "sib-api-v3-sdk": "^8.5.0",
+    "sib-api-v3-typescript": "^2.2.2",
+>>>>>>> 564a81165a1a7c8da7921fade9d3d41c95dc5f21
     "swiper": "^9.3.1",
     "typescript": "5.0.4"
   }
