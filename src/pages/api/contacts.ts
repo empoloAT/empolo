@@ -5,17 +5,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
 	switch (method) {
 		case 'POST':
-			const { name, email, message } = req.body;
+			const { email } = req.body;
 
-			let data = {
-				sender: { name: name, email: email },
-				to: [{ email: "marko.kalabota@empolo.at" }],
-				subject: "Message from: " + name,
-				textContent: message,
-			};
+			const data = {
+				email,
+				listIds: [3]
+			}
 
 			try {
-				const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+				const response = await fetch('https://api.brevo.com/v3/contacts', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json',
@@ -37,7 +35,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 					res.status(500).json({ error: 'An unknown error occurred.' });
 				}
 			}
-
 			break;
 		default:
 			res.setHeader('Allow', ['POST']);
