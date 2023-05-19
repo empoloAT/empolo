@@ -1,12 +1,19 @@
+import { FunctionComponent } from "react";
 import Link from "next/link";
 
 import styles from "./privacyPolicy.module.scss";
 
-export const PrivacyPolicy = () => {
+type TProps = {
+  posts: {
+    privacyPolicyTitle: string;
+  }
+};
+
+export const PrivacyPolicy: FunctionComponent<TProps> = ({ posts }) => {
   return (
     <div className={styles.component}>
       <Link href="/">
-        Privacy Policy
+        {posts.privacyPolicyTitle}
       </Link>
     </div>
   );

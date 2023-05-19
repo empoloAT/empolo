@@ -79,7 +79,7 @@
 }
 
 .input {
-  padding-right: 112px;
+  padding-right: 130px;
 }
 
 .button {
@@ -89,6 +89,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.button:hover {
+  background-color: var(--bgHoverGray);
+}
+
+.button:active {
+  background-color: var(--borderGray);
 }
 
 .button:hover {
@@ -117,6 +125,10 @@
   display: flex;
   justify-content: space-between;
   min-width: 274px;
+
+  @include mixin.media-w(breakpoints.$laptop-m) {
+    min-width: 254px;
+  }
 
   @include mixin.media-w(breakpoints.$laptop-s) {
     width: 100%;

@@ -1,4 +1,6 @@
+import { FunctionComponent } from "react";
 import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
 import { useWindowSize } from "hooks";
 import {
   Button,
@@ -18,7 +20,14 @@ interface IForm {
   message: string;
 };
 
-export const ContactUS = () => {
+type TProps = {
+  posts: {
+    contactUsToastTitle: string;
+    toastError: string;
+  };
+};
+
+export const ContactUS: FunctionComponent<TProps> = ({ posts }) => {
   const { control, handleSubmit: validateBeforeSubmit } = useForm<IForm>({});
   const { isLaptopS } = useWindowSize();
 
@@ -34,11 +43,13 @@ export const ContactUS = () => {
     if (res.ok) {
       const responseJson = await res.json();
       console.log(responseJson);
+      return toast(<P>{posts.contactUsToastTitle}</P>);
     } else {
       console.error('Error sending email');
-    }
+      return toast(<P>{posts.toastError}</P>);
+    };
   };
-
+  
   return (
     <section id="contact-us" className={styles.component}>
       <Container className={styles.wrapper}>
@@ -73,6 +84,7 @@ export const ContactUS = () => {
                 >
                   Send Message
                 </Button>
+                <Toaster />
               </form>
             </div>
             {!isLaptopS &&

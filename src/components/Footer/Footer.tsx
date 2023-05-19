@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { useWindowSize } from "hooks";
+import { GetAllPosts } from "utils/posts";
 import {
   Social,
   Logo,
@@ -17,12 +18,12 @@ import {
 
 import styles from "./footer.module.scss";
 
-
 interface IForm {
   email: string;
 };
 
 export const Footer = () => {
+  const posts = GetAllPosts();
   const { control, handleSubmit: validateBeforeSubmit } = useForm<IForm>({});
   const { isLaptopS } = useWindowSize();
 
@@ -38,8 +39,10 @@ export const Footer = () => {
     if (res.ok) {
       const responseJson = await res.json();
       console.log(responseJson);
+      return toast(<P>{posts.newsletterToastTitle}</P>);
     } else {
       console.error('Error sending email');
+      return toast(<P>{posts.toastError}</P>);
     }
   };
 
@@ -62,7 +65,7 @@ export const Footer = () => {
           </div>
         </div>
         <div className={styles.registerContainer}>
-          <P className={styles.title}>Register for Newsletter</P>
+          <P className={styles.title}>{posts.newsletterTitle}</P>
           <form className={styles.form} action="POST" onSubmit={validateBeforeSubmit(handleSubmit)}>
             <Input
               name="email"
@@ -77,14 +80,21 @@ export const Footer = () => {
             >
               Subscribe
             </Button>
+            <Toaster />
           </form>
-          <P className={styles.text}>By subscribing you agree to with our Privacy Policy</P>
+          <P className={styles.text}>{posts.subscribingTitle}</P>
         </div>
         <div className={styles.copyright}>
-          <Copyright />
+          <Copyright
+            posts={posts}
+          />
           <div className={styles.terms}>
-            <PrivacyPolicy />
-            <TermsConditions />
+            <PrivacyPolicy
+              posts={posts}
+            />
+            <TermsConditions
+              posts={posts}
+            />
           </div>
         </div>
       </Container>

@@ -1,11 +1,18 @@
+import { FunctionComponent } from "react";
 import { P } from "components";
 
 import styles from "./copyright.module.scss";
 
-export const Copyright = () => {
+type TProps = {
+  posts: {
+    copyrightTitle: string;
+  }
+};
+
+export const Copyright: FunctionComponent<TProps> = ({ posts }) => {
   return (
     <div className={styles.component}>
-      <P className={styles.title}>Empolo 2023 ©All rights reserved</P>
+      <P className={styles.title}>{posts.copyrightTitle}</P>
     </div>
   );
 };

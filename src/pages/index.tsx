@@ -65,7 +65,9 @@ const Home = () => {
         posts={posts}
       />
       <div ref={contactRef}></div>
-      <ContactUS />
+      <ContactUS
+        posts={posts}
+      />
     </>
   );
 };
