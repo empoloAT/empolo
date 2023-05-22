@@ -1,0 +1,52 @@
+@use "styles/mixin";
+@use "styles/breakpoints";
+
+.component {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  background-color: var(--bgGray);
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+  border-top: 1px solid var(--borderGray);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20%;
+  @include mixin.maxWidth(1720px);
+  padding: 0 60px;
+  
+  @include mixin.media-w(breakpoints.$laptop-l) {
+    padding: 0 40px;
+  }
+
+  @include mixin.media-w(breakpoints.$laptop-s) {
+    padding: 0 20px;
+  }
+}
+
+.button {
+  background-color: var(--ctaYellow);
+  color: var(--fontBlack);
+  font-weight: 600;
+  padding: 10.5px 19.5px;
+  border: none;
+  border-radius: 44px;
+  font-size: 16px;
+}
+
+.button:hover {
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  background-color: var(--bgHoverGray);
+}
+
+.button:active {
+  background-color: var(--borderGray);
+}

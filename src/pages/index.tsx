@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import type { AppProps } from "next/app";
 import type { ReactElement } from "react";
 import { GetAllMedia } from "utils/media";
 import { GetMainTitle } from "utils/mainTitle";
@@ -72,9 +73,9 @@ const Home = () => {
   );
 };
 
-Home.getLayout = function getLayout(page: ReactElement) {
+Home.getLayout = function getLayout(page: ReactElement, pageProps: AppProps) {
   return (
-    <Layout>
+    <Layout pageProps={pageProps}>
       {page}
     </Layout>
   );

@@ -1,20 +1,23 @@
 import classNames from "classnames";
+import type { AppProps } from "next/app";
 import { golos } from "styles/fonts/golos";
 import { FunctionComponent, ReactNode, useState, useRef } from "react";
 import { useWindowSize } from "hooks";
 import { BurgerContext } from "context";
-import { Header, Footer, BurgerMenu, ScrollButton } from "components";
+import { Header, Footer, BurgerMenu, ScrollButton, CookieBannerComponent } from "components";
 
 import styles from "./layout.module.scss";
 
 type TProps = {
   children: ReactNode;
+  pageProps: AppProps;
 }
 
-export const Layout: FunctionComponent<TProps> = ({ children }) => {
+export const Layout: FunctionComponent<TProps> = ({ children, pageProps }) => {
   const [ activeBurger, setActiveBurger ] = useState(false);
   const { isLaptop } = useWindowSize();
   const headerRef = useRef<HTMLDivElement>(null);
+  const acceptedCookies = pageProps;
   
   const handleClick = () => {
     if (headerRef.current) {
@@ -49,6 +52,7 @@ export const Layout: FunctionComponent<TProps> = ({ children }) => {
           {children}
         </main>
         <Footer />
+        {!acceptedCookies && <CookieBannerComponent acceptedCookies={acceptedCookies} />}
       </BurgerContext.Provider>
     </div>
   );
