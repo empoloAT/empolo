@@ -24,6 +24,10 @@
   min-width: 203px;
   white-space: nowrap;
 
+  @include mixin.media-minW(breakpoints.$desktop) {
+    font-size: 26px;
+  }
+
   @include mixin.media-w(breakpoints.$laptop) {
     height: 52px;
     padding: 15px 45px;
@@ -35,6 +39,10 @@
 	padding: 21px 51.5px;
   @include mixin.fluidFont(12, 26, 1920);
   white-space: nowrap;
+
+  @include mixin.media-minW(breakpoints.$desktop) {
+    font-size: 26px;
+  }
 
   @include mixin.media-w(breakpoints.$laptop) {
     height: 52px;
@@ -53,6 +61,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include mixin.media-minW(breakpoints.$desktop) {
+    font-size: 32px;
+  }
 
   @include mixin.media-w(breakpoints.$laptop) {
     padding: 8px 8px 8px 32px;

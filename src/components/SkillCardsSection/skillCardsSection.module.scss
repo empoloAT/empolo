@@ -49,6 +49,10 @@
   margin: 11.9% 0 9.5% 0;
   @include mixin.fluidFont(23, 26, 1920);
 
+  @include mixin.media-minW(breakpoints.$desktop) {
+    font-size: 26px;
+  }
+
   @include mixin.media-w(breakpoints.$skillCards) {
     width: 100%;
   }

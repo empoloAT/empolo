@@ -5,6 +5,10 @@
   @include mixin.fluidFont(8, 46, 1920);
   font-weight: 500;
 
+  @include mixin.media-minW(breakpoints.$desktop) {
+    font-size: 46px;
+  }
+
   @include mixin.media-w(breakpoints.$laptop) {
     @include mixin.fluidFont(20, 24, 1024);
   }

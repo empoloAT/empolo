@@ -6,6 +6,10 @@
   @include mixin.fluidFont(10, 20, 1920);
   white-space: nowrap;
 
+  @include mixin.media-minW(breakpoints.$desktop) {
+    font-size: 20px;
+  }
+
   @include mixin.media-w(breakpoints.$laptop-m) {
     font-size: 14px;
   }

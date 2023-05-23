@@ -30,6 +30,10 @@
   color: var(--fontGray);
   @include mixin.fluidFont(22, 26, 1920);
 
+  @include mixin.media-minW(breakpoints.$desktop) {
+    font-size: 26px;
+  }
+
   @include mixin.media-w(breakpoints.$laptop-m) {
     margin: 20px 0;
     @include mixin.fluidFont(20, 24, 1920);

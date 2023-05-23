@@ -12,6 +12,10 @@
   height: 100%;
   @include mixin.fluidFont(8, 32, 1920);
   white-space: nowrap;
+
+  @include mixin.media-minW(breakpoints.$desktop) {
+    font-size: 32px;
+  }
 }
 
 .activeBurger {

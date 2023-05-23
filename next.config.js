@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['empolo.at']
+    domains: ['content.empolo.digital']
   }
 }
 

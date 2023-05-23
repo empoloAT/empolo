@@ -30,6 +30,10 @@
 .mainTitle {
   @include mixin.fluidFont(20, 104, 1920);
 
+  @include mixin.media-minW(breakpoints.$desktop) {
+    font-size: 104px;
+  }
+
   @include mixin.media-w(breakpoints.$laptop) {
     @include mixin.fluidFont(30, 56, 1024);
   }
@@ -58,6 +62,10 @@
   font-weight: 600;
   margin-bottom: 12.4%;
 
+  @include mixin.media-minW(breakpoints.$desktop) {
+    font-size: 32px;
+  }
+  
   @include mixin.media-w(breakpoints.$laptop) {
     @include mixin.fluidFont(20, 24, 1024);
   }

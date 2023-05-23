@@ -1,4 +1,5 @@
 @use "styles/mixin";
+@use "styles/breakpoints";
 
 .component {
   color: var(--fontBlack);
@@ -9,4 +10,8 @@
   margin-bottom: 6.0%;
   font-weight: 600;
   @include mixin.fluidFont(20, 104, 1920);
+
+  @include mixin.media-minW(breakpoints.$desktop) {
+    font-size: 104px;
+  }
 }
