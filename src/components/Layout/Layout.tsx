@@ -3,7 +3,7 @@ import { golos } from "styles/fonts/golos";
 import { FunctionComponent, ReactNode, useState, useRef } from "react";
 import { useWindowSize } from "hooks";
 import { BurgerContext } from "context";
-import { Header, Footer, BurgerMenu, ScrollButton } from "components";
+import { Header, Footer, BurgerMenu, ScrollButton, CookieBannerComponent } from "components";
 
 import styles from "./layout.module.scss";
 
@@ -49,6 +49,7 @@ export const Layout: FunctionComponent<TProps> = ({ children }) => {
           {children}
         </main>
         <Footer />
+        <CookieBannerComponent />
       </BurgerContext.Provider>
     </div>
   );
