@@ -6,4 +6,4 @@ export const GetMainTitle = () => {
   const mainTitle = data?.post.content;
 
   return mainTitle;
-}
+};

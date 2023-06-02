@@ -11,7 +11,7 @@ export const EmpoloBackground: FunctionComponent<TProps> = ({ url }) => {
   
   return (
     <section className={styles.component}>
-      <video src={url} className={styles.video} autoPlay loop muted />
+      <video src={url} className={styles.video} autoPlay loop muted playsInline />
       <div className={styles.shadow}></div>
       {activeBurger &&
         <div className={styles.activeBurgerShadow}></div>
