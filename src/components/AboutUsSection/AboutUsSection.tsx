@@ -27,7 +27,7 @@ export const AboutUsSection: FunctionComponent<TProps> = ({
   return (
     <section id="about-us" className={styles.component}>
       <Container>
-        <H2 className={styles.mainTitle}>About Us</H2>
+        <H2 className={styles.mainTitle}>Über uns</H2>
         {isLaptopS ?
           <div className={styles.flexContainer}>
             <div className={styles.firstBlock}>
