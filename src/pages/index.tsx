@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRef } from "react";
 import type { ReactElement } from "react";
 import { GetAllMedia } from "utils/media";
@@ -31,6 +32,9 @@ const Home = () => {
 
   return (
     <>
+      <Head>
+        <title>Empolo</title>
+      </Head>
       <EmpoloBackground
         url={mediaUrls.videoUrl}
       />
